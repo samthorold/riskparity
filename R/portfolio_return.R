@@ -1,13 +1,15 @@
 #' Portfolio return
 #'
 #' @param w vector
-#' @param R matrix
+#' @param r vector
 #'
-#' @return matrix
+#' @return vector
 #' @export
 #'
 #' @examples
-#' portfolio_return(c(0.5, 0.5), matrix(c(0.1, 0.2, 0.2, 0.1), ncol = 2))
-portfolio_return <- function(w, R) {
-  R %*% w
+#' w <- c(.55, .25, .2)
+#' r <- c(0.08, 0.04, 0.03)
+#' portfolio_return()
+portfolio_return <- function(w, r) {
+  (r %*% w)[[1]]
 }

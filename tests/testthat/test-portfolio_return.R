@@ -1,5 +1,7 @@
 test_that("portfolio_return sanity check", {
-  res <- portfolio_return(c(0.5, 0.5), matrix(c(0.1, 0.2, 0.2, 0.1), ncol = 2))
-  exp <- matrix(c(0.15, 0.15))
+  w <- c(.55, .25, .2)
+  r <- c(0.08, 0.04, 0.03)
+  res <- portfolio_return(w, r)
+  exp <- 0.06
   expect_equal(res, exp)
 })

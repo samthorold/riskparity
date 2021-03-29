@@ -4,19 +4,21 @@
 \alias{portfolio_return}
 \title{Portfolio return}
 \usage{
-portfolio_return(w, R)
+portfolio_return(w, r)
 }
 \arguments{
 \item{w}{vector}
 
-\item{R}{matrix}
+\item{r}{vector}
 }
 \value{
-matrix
+vector
 }
 \description{
 Portfolio return
 }
 \examples{
-portfolio_return(c(0.5, 0.5), matrix(c(0.1, 0.2, 0.2, 0.1), ncol = 2))
+w <- c(.55, .25, .2)
+r <- c(0.08, 0.04, 0.03)
+portfolio_return()
 }
