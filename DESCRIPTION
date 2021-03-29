@@ -1,0 +1,18 @@
+Package: riskparity
+Title: Asset allocation for risk parity
+Version: 0.1
+Authors@R: 
+    person(given = "Sam",
+           family = "Thorold",
+           role = c("aut", "cre"),
+           email = "sam.thorold@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Asset allocation for risk parity.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
