@@ -35,9 +35,11 @@ w <- c(.55, .25, .2)
 s <- c(.24, .18, .15)
 # asset correlation
 C <- matrix(c(1, 0.85, 0.3, 0.85, 1, -0.15, 0.3, -0.15, 1), nrow = 3)
+
 # total contribution to portfolio standard deviation
 asset_stdev_contrib(w, s, C)
 #> [1] 0.13141350 0.03816440 0.01047209
+
 # marginal contribution to portfolio standard deviation
 asset_stdev_contrib(w, s, C, marginal = TRUE)
 #> [1] 0.23893364 0.15265760 0.05236046
