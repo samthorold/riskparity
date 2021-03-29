@@ -29,11 +29,11 @@ devtools::install_github("samthorold/riskparity")
 
 ``` r
 library(riskparity)
-w <- c(.55, .25, .2)
-s <- c(.24, .18, .15)
-C <- matrix(c(1, 0.85, 0.3, 0.85, 1, -0.15, 0.3, -0.15, 1), nrow = 3)
-asset_stdev_contrib(w, s, C)
+w <- c(.55, .25, .2)  # asset allocation
+s <- c(.24, .18, .15)  # asset standard deviations
+C <- matrix(c(1, 0.85, 0.3, 0.85, 1, -0.15, 0.3, -0.15, 1), nrow = 3)  # asset correlation
+asset_stdev_contrib(w, s, C)  # total contribution to portfolio standard deviation
 #> [1] 0.13141350 0.03816440 0.01047209
-asset_stdev_contrib(w, s, C, marginal = TRUE)
+asset_stdev_contrib(w, s, C, marginal = TRUE)  # marginal contribution to portfolio standard deviation
 #> [1] 0.23893364 0.15265760 0.05236046
 ```
