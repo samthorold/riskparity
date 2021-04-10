@@ -50,4 +50,8 @@ asset_stdev_contrib(w, s, C)
 
 # marginal contribution to portfolio standard deviation
 asset_stdev_contrib(w, s, C, marginal = TRUE)
+
+# dispursion measures
+effective_constituents(w)
+entropy(w)
 ```
