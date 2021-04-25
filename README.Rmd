@@ -61,46 +61,14 @@ df <- read.csv("../data/equity.csv")[,-1]
 head(df)
 
 C <- cor(df)
-
-cor_robust(C, 0)
-cor_robust(C, 0.55)
-
-V <- cov(df)
-
-cov_robust(V, 0)
-cov_robust(V, 0.55)
-
-s <- apply(df, 2, sd)
-S <- diag(s)
-S
-
-decomp <- eigen(C)
-E <- diag(decomp$values)
-R <- decomp$vectors
-
-all(round(C, 2) == round(R %*% E %*% t(R), 2))
-
-t <- dim(df)[1]
-n <- dim(df)[2]
-
-e_thresh <- 1 + n / t + 2 * sqrt(n / t)
-e_thresh <- 0.55
-
-e <- diag(E)
-e[e < e_thresh] = 0
-E_robust <- diag(e)
-
-C_robust <- R %*% E_robust %*% t(R)
-diag(C_robust) <- 1
-C_robust
-
-V_robust <- S %*% C_robust %*% S
-V_robust
+round(C, 2)
+all(round(cor_robust(C, 0), 2) == round(C, 2))
+round(cor_robust(C, 0.55), 2)
 
 V <- cov(df)
-
-S_inv <- diag(1 / sqrt(diag(V)))
-all(round(S_inv %*% V %*% S_inv, 2) == round(cor(df), 2))
+round(V, 6)
+all(round(cov_robust(V, 0), 6) == round(V, 6))
+round(cov_robust(V, 0.55), 6)
 ```
 
 
