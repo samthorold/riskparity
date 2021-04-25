@@ -11,5 +11,5 @@ cov_robust <- function(V, e_thresh) {
   S <- sqrt(diag(V))
   S_inv <- diag(1 / S)
   C <- S_inv %*% V %*% S_inv
-  S %*% cor_robust(C, e_thresh) %*% S
+  diag(S) %*% cor_robust(C, e_thresh) %*% diag(S)
 }
