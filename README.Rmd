@@ -57,8 +57,11 @@ entropy(w)
 entropy(asset_stdev_contrib(w, s, C))
 
 df <- read.csv("../data/equity.csv")[,-1]
-
 head(df)
+dim(df)
+
+w <- matrix(1 / rep(ncol(df), ncol(df)))
+s <- apply(df, 2, sd)
 
 C <- cor(df)
 round(C, 2)
@@ -69,6 +72,19 @@ V <- cov(df)
 round(V, 6)
 all(round(cov_robust(V, 0), 6) == round(V, 6))
 round(cov_robust(V, 0.55), 6)
+
+q <- asset_stdev_contrib(w, s, C) / sum(asset_stdev_contrib(w, s, C))
+q
+encb <- entropy(q)
+encb
+
+C <- cor_robust(C, 0.55)
+
+q <- asset_stdev_contrib(w, s, C) / sum(asset_stdev_contrib(w, s, C))
+q
+encb <- entropy(q)
+encb
+
 ```
 
 

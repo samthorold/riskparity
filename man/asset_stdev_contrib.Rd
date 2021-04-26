@@ -7,9 +7,9 @@
 asset_stdev_contrib(w, s, C, marginal = FALSE)
 }
 \arguments{
-\item{w}{vector}
+\item{w}{matrix}
 
-\item{s}{vector}
+\item{s}{matrix}
 
 \item{C}{matrix}
 
@@ -22,8 +22,8 @@ vector
 Asset contribution to portfolio standard deviation
 }
 \examples{
-w <- c(.55, .25, .2)
-s <- c(.24, .18, .15)
+w <- matrix(c(.55, .25, .2))
+s <- matrix(c(.24, .18, .15))
 C <- matrix(c(1, 0.85, 0.3, 0.85, 1, -0.15, 0.3, -0.15, 1), nrow = 3)
 asset_stdev_contrib(w, s, C)
 asset_stdev_contrib(w, s, C, marginal = TRUE)
