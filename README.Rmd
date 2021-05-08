@@ -85,6 +85,11 @@ q
 encb <- entropy(q)
 encb
 
+p <- factor_stdev_contrib(w, s, C) / sum(factor_stdev_contrib(w, s, C))
+p
+enb <- entropy(p)
+enb
+
 ```
 
 
