@@ -80,10 +80,16 @@ encb
 
 C <- cor_robust(C, 0.55)
 
+asset_stdev_contrib(w, s, C)
+sum(asset_stdev_contrib(w, s, C))
+
 q <- asset_stdev_contrib(w, s, C) / sum(asset_stdev_contrib(w, s, C))
 q
 encb <- entropy(q)
 encb
+
+factor_stdev_contrib(w, s, C)
+sum(factor_stdev_contrib(w, s, C))
 
 p <- factor_stdev_contrib(w, s, C) / sum(factor_stdev_contrib(w, s, C))
 p
