@@ -3,6 +3,7 @@
 export(asset_stdev_contrib)
 export(cor_robust)
 export(cov_robust)
+export(diversification_ratio)
 export(effective_constituents)
 export(entropy)
 export(factor_stdev_contrib)
